@@ -32,8 +32,9 @@ jobs:
 
       - name: Commit and Push Dashboard
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git add dashboard_247.html
-          git commit -m "Auto-update dashboard" || exit 0
-          git push
+              git config --global user.name 'GitHub Action'
+              git config --global user.email 'action@github.com'
+              git add dashboard_247.html
+              git commit -m "Auto-update dashboard" || exit 0
+              # THE FIX IS BELOW: Explicitly push to the main branch
+              git push origin HEAD:main
